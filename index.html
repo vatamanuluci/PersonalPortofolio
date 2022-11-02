@@ -12,29 +12,7 @@
 
   <!-- custom css file link  -->
   <link rel="stylesheet" href="style.css">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init(nzMG3JMWosINl5MLA);
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+
 </head>
 
 <body>
@@ -404,25 +382,15 @@
 
       </div>
 
-<!--       <form id="contact-form" action="mailto:lucivatamanu@gmail.com" method="get">
-        <input type="hidden" name="contact_number">
+      <form action="mailto:lucivatamanu@gmail.com" method="get">
+
         <input type="text" placeholder="name" class="box">
         <input type="email" placeholder="email" class="box">
         <input type="text" placeholder="company" class="box">
         <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
         <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
 
-      </form> -->
-      <form id="contact-form">
-        <input type="hidden" name="contact_number">
-        <label>Name</label>
-        <input type="text" name="user_name">
-        <label>Email</label>
-        <input type="email" name="user_email">
-        <label>Message</label>
-        <textarea name="message"></textarea>
-        <input type="submit" value="Send">
-    </form>
+      </form>
 
     </div>
 
@@ -436,14 +404,6 @@
   <a href="#home" class="top">
     <img src="images/scroll-top-img.png" alt="">
   </a>
-
-
-
-
-
-
-
-
 
 
   <!-- jquery cdn link  -->
