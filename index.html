@@ -12,7 +12,29 @@
 
   <!-- custom css file link  -->
   <link rel="stylesheet" href="style.css">
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('nzMG3JMWosINl5MLA');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -382,8 +404,8 @@
 
       </div>
 
-      <form action="https://mailto:lucivatamanu@gmail.com" method="get">
-
+      <form id="contact-form" action="mailto:lucivatamanu@gmail.com" method="get">
+        <input type="hidden" name="contact_number">
         <input type="text" placeholder="name" class="box">
         <input type="email" placeholder="email" class="box">
         <input type="text" placeholder="company" class="box">
