@@ -365,14 +365,14 @@ header .navbar ul li a:hover{
     padding-bottom: 0;
 }
 
-.contact .row form{
+.contact .row div{
     flex:1 1 45rem;
     padding:2rem;
     margin:2rem;
     margin-bottom: 4rem;
 }
 
-.contact .row form .box{
+.contact .row div .box{
     padding:1.5rem;
     margin:1rem 0;
     background:#06283D3;
@@ -382,11 +382,11 @@ header .navbar ul li a:hover{
     width:100%;
 }
 
-.contact .row form .box::placeholder{
+.contact .row div .box::placeholder{
     text-transform: capitalize;
 }
 
-.contact .row form .message{
+.contact .row div .message{
     height: 15rem;
     resize: none;
 }
